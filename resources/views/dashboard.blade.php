@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--CDN Bootstrap CSS-->
-    <link rel="icon" type="image/png" href="http://127.0.0.1:8000/assets/Culineira_Logo.png"/>
+    <link rel="icon" type="image/png" href="http://127.0.0.1:8000/assets/Musica_Logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">		<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
@@ -25,7 +25,7 @@
             body.Light {
                 --text: #414141;
                 --text2: #2F4858;
-                --background: #fdffd1;
+                --background: #F6F2CB;
                 --background2: white; /*For container*/
                 --background3: white; /*For container*/
                 --background4: #f0f0f0;
@@ -160,6 +160,20 @@
                 -o-transition: .3s all ease;
                 transition: .3s all ease;
             }
+            .btn.btn-primary{
+                background:#F2F630;
+                border-color:#F2F630;
+            }
+            .btn.btn-success{
+                background:#00BD84;
+                border-color:#00BD84;
+            }
+            .btn.btn-info{
+                background:#76568C;
+                border-color:#76568C;
+                color:whitesmoke;
+            }
+
             #addRecipeButton{
                 border-radius:100%;
                 margin-top:-40px;
@@ -332,12 +346,6 @@
                 transition: all 0.3s;
             }
 
-            .btn.btn-primary {
-                background:  #F2F630;
-                border-color:  #F2F630;
-            }
-
-
             .footer p {
                 color: rgba(255, 255, 255, 0.5);
             }
@@ -379,14 +387,14 @@
 			}
 			.flex-row.nav-pills.nav-pills-custom .nav-link.active {
 				color: white;
-				background: #EB7336;
+				background: #75558a;
 			}
 			@media (min-width: 992px) {
 				.flex-row.nav-pills.nav-pills-custom .nav-link::before {
 					content: '';
 					display: block;
 					border-left: 8px solid transparent;
-					border-top: 10px solid #EB7336;
+					border-top: 10px solid #75558a;
 					border-right: 8px solid transparent;
 					position: absolute;
 					top: 115%;
@@ -468,7 +476,7 @@
                 margin: auto;
                 margin-bottom: -185px;
                 position: relative;
-                background:#78578E;
+                background:#009791;
                 z-index: 1;
             }
             .deneb_cta .cta_wrapper:after {
@@ -557,13 +565,13 @@
 
 			/*when hovering an item:*/
 			.autocomplete-items div:hover {
-				background-color: #EB7336;
+				background-color: #75558a;
 				color: #ffffff;
 			}
 
 			/*when navigating through the items using the arrow keys:*/
 			.autocomplete-active {
-				background-color: #EB7336 !important;
+				background-color: #75558a !important;
 				color: #ffffff;
 			}
 		</style>
@@ -576,57 +584,39 @@
         </script>
 
         <div class="wrapper d-flex align-items-stretch">
-            <!--Sidebar.-->
-        <nav id="sidebar">
-            <div class="p-4 pt-2">
-                <img class="w-100" src="{{asset('assets/Culineira_FullLogo.png')}}" alt='logo'
-                    style='display: block; margin-left: auto; margin-right: auto;'>
-
-              
-
-                <!--Main Navbar.-->
-                <ul class="list-unstyled components mb-3">
-                    <li class="active">
-                        <a href="#"><i class="fa-solid fa-book"></i> Recipes</a>
-                    </li>
-                    <li>
-                    <a href="#"><i class="fa-solid fa-kitchen-set"></i> My Kitchen</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-solid fa-people-group"></i> Community</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-solid fa-circle-info"></i> Guide</a>
-                    </li>
-                </ul>
-                <button class="btn btn-danger" style='margin-top:-10px;' onclick="location.href='{{ url('/') }}'">Sign-Out</button>
-                <button class="btn btn-primary" style='margin-top:-10px;' id="theme-toggle"><span id="theme"></span> Mode</button>
-            </div>
-    	</nav>
 
             <!-- Page Content  -->
             <div id="content" class="pb-2" style='width:100%;'>
                 <div class="container-fluid" style="background:linear-gradient(to bottom right, #F2F630, #FBF305);">
                     <div class="accordion py-4" id="accordionRecipe" style="padding:15%;">
                         <!--Secondary Navbar.-->
-                        
-                        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-                            
+
+                        <nav class="navbar navbar-expand-lg navbar-light bg-dark rounded">
+
                         <button type="button" id="sidebarCollapse" class="btn btn-primary">
                         <i class="fa-solid fa-compact-disc text-dark"></i>
                         <span class="sr-only">Toggle Menu</span>
                         </button>
-                       
+
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="nav navbar-nav ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">Recipe</a>
+                                        <a class="nav-link" href="" role="button">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">My Kitchen</a>
+                                        <a class="nav-link" href="" role="button">Discover</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">Community</a>
+                                        <a class="nav-link" href="" role="button">Radio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="" role="button">Album</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="" role="button">Podcast</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="" role="button">Creation</a>
                                     </li>
                                 </ul>
                             </div>
@@ -639,7 +629,7 @@
                                     <p class="text-dark mt-2 fw-bolder">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                                     <div class="row mb-xl-5">
                                         <button class="btn btn-success w-25 m-1 shadow" data-bs-toggle="collapse" data-bs-target="#loginForm">Sign In</button>
-                                        <button class="btn btn-primary w-25 m-1 shadow" style="background:#78578E;" data-bs-toggle="collapse" data-bs-target="#createAccForm">Let's Join</button>
+                                        <button class="btn btn-info w-25 m-1 shadow" data-bs-toggle="collapse" data-bs-target="#createAccForm">Get's Started</button>
                                     </div>
                                     <p class="text-dark mt-2">Stay connected with us</p>
                                     <div class="row">
@@ -657,19 +647,19 @@
                                 <div class="col-md-5">
                                     <div id="accordion">
                                         <div class="collapse show" id="landingImage" data-bs-parent="#accordion">
-                                            <img src="{{asset('assets/Media player-cuate.png')}}" alt='logo'
+                                            <img src="{{asset('assets/Musica_Landing.png')}}" alt='logo'
                                                 style='display: block; margin-left: auto; margin-right: auto; width:100%;'>
                                         </div>
                                         <div class="collapse p-4" id="loginForm" data-bs-parent="#accordion" style="min-width:400px;">
                                             <form action="/login" method="POST">
                                             @csrf
-                                            <a class="text-white">Username</a>
+                                            <a class="text-dark">Username</a>
                                             <input class="form-control" type="text" name="username" required></input>
-                                            <a class="text-white">Password</a>
+                                            <a class="text-dark">Password</a>
                                             <input class="form-control" type="password" name="password" required></input>
                                             <div class="row mt-2">
                                                 <div class="col-md-8">
-                                                    <a class="btn btn-link text-white" style="font-size:13px;">Forget Password</a>
+                                                    <a class="btn btn-link text-dark" style="font-size:13px;">Forget Password</a>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <button class="btn btn-success w-100" type="submit">Submit</button>
@@ -694,6 +684,11 @@
                                                     <div class="step-item">
                                                         <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
                                                             data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">3</button>
+                                                        <div class="step-title">Preferred</div>
+                                                    </div>
+                                                    <div class="step-item">
+                                                        <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
+                                                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">4</button>
                                                         <div class="step-title">Validation</div>
                                                     </div>
                                                 </div>
@@ -704,18 +699,18 @@
                                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                                             data-bs-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <a class="text-white">Username</a>
+                                                                <a class="text-dark">Username</a>
                                                                 <input class="form-control" type="text" name="username" required></input>
-                                                                <a class="text-white">Email</a>
-                                                                <input class="form-control" type="email" name="email" required></input>
-                                                                <a class="text-white">Password</a>
+                                                                <a class="text-dark">Email</a>
+                                                                <input class="form-control" type="email" name="email" placeholder="example@gmail.com" required></input>
+                                                                <a class="text-dark">Password</a>
                                                                 <input class="form-control" type="password" name="password" required></input>
-                                                                <a class="text-white">Country</a>
+                                                                <a class="text-dark">Country</a>
                                                                 <div class="autocomplete w-100">
                                                                     <input class="form-control" type="text" id="searchInput" name="country" required></input>
                                                                 </div>
-                                                                <a class="text-white">Description</a>
-                                                                <textarea class="form-control" rows="4" aria-label="With textarea" name="description" placeholder="tell others about yourselft..."></textarea>
+                                                                <a class="text-dark">Description</a>
+                                                                <textarea class="form-control" rows="3" aria-label="With textarea" name="description" placeholder="tell others about yourselft..."></textarea>
                                                                 <!--Steps control-->
                                                                 <div class="row mt-3">
                                                                     <div class="col-md-7">
@@ -734,7 +729,7 @@
                                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingOne"
                                                             data-bs-parent="#accordionExample">
                                                             <div class="card-body">
-                                                                <a class="text-white">Image</a>
+                                                                <a class="text-dark">Image</a>
                                                                 <input class="form-control" type="file" id="formFileCreateAcc" onchange="previewCreateAcc()" name="user_image" accept="image/png, image/jpg, image/jpeg" required>
                                                                 <label class="form-label">Preview</label>
                                                                 <div class="row">
@@ -742,7 +737,6 @@
                                                                         <img id="frame" src="http://127.0.0.1:8000/assets/NoImage.png" class="img-fluid" style="width:200px; border-radius:100%; background:white;"/>
                                                                     </div>
                                                                     <div class="col-md-5">
-                                                                        <label class="form-label">Visibility <i class="fa-solid fa-circle-question" type="button"></i></label>
                                                                         <a onclick="clearImageCreateAcc()" class="btn btn-danger mt-3 w-100"><i class="fa-solid fa-trash"></i> Reset</a>
                                                                     </div>
                                                                 </div>
@@ -768,12 +762,48 @@
                                                         <div id="collapseThree" class="collapse" aria-labelledby="headingOne"
                                                             data-bs-parent="#accordionExample">
                                                             <div class="card-body">
+                                                                <a class="text-dark">Music Genre</a>
                                                                 <div class="row">
-                                                                    <div class="col-md-3">
-                                                                        <img src="http://127.0.0.1:8000/assets/storyset/Validation.png" style="width:100px;"/>
-                                                                    </div>
                                                                     <div class="col-md-9">
-                                                                        <p class="text-white">We have sent a verification code to your email. Please fill out the following form using that code.</p>
+                                                                        <select class="form-select mb-2" aria-label="Default select example" id="music_genre">
+                                                                            <option value="Pop">Pop</option>
+                                                                            <option value="Rock">Rock</option>
+                                                                            <option value="EDM">EDM</option>
+                                                                            <option value="Hip-Hop">Hip-Hop</option>
+                                                                            <option value="Country">Country</option>
+                                                                            <option value="Jazz">Jazz</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <a class="btn btn-success" id="add_music_genre"><i class="fa-solid fa-plus"></i> Add</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="container-fluid bg-transparent rounded mb-4" style="border:2px solid #212529;">
+                                                                    <a class="text-dark">Preferred Podcast</a>
+                                                                    <div class="row" id="data_music_genre">
+
+                                                                    </div>
+                                                                </div>
+                                                                <a class="text-dark">Podcast Genre</a>
+                                                                <div class="row">
+                                                                    <div class="col-md-9">
+                                                                        <select class="form-select mb-2" aria-label="Default select example" id="podcast_genre">
+                                                                            <option value="Comedy">Comedy</option>
+                                                                            <option value="Entertainment">Entertainment</option>
+                                                                            <option value="Social & Culture">Social & Culture</option>
+                                                                            <option value="Political">Political</option>
+                                                                            <option value="Knowledge">Knowledge</option>
+                                                                            <option value="Mystery">Mystery</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <a class="btn btn-success" id="add_podcast_genre"><i class="fa-solid fa-plus"></i> Add</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="container-fluid bg-transparent rounded mb-2" style="border:2px solid #212529;">
+                                                                    <a class="text-dark">Preferred Music</a>
+                                                                    <div class="row" id="data_podcast_genre">
+
                                                                     </div>
                                                                 </div>
                                                                 <!--Steps control-->
@@ -785,12 +815,42 @@
                                                                     <div class="col-md-2">
                                                                     </div>
                                                                     <div class="col-md-5">
-                                                                        <button class="btn btn-success w-100 border-0" style="background:#76568C;" type="submit">Submit <i class="fa-solid fa-arrow-up"></i></button>
+                                                                        <a class="btn btn-success w-100" type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseFour">Next <i class="fa-solid fa-arrow-right"></i></a>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div><!--End of steps 3-->
+
+                                                    <div class="card border-0 bg-transparent">
+                                                        <div id="headingOne"></div>
+                                                        <div id="collapseFour" class="collapse" aria-labelledby="headingOne"
+                                                            data-bs-parent="#accordionExample">
+                                                            <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <img src="http://127.0.0.1:8000/assets/storyset/Validation.png" style="width:100px;"/>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <p class="text-dark">We have sent a verification code to your email. Please fill out the following form using that code.</p>
+                                                                    </div>
+                                                                </div>
+                                                                <!--Steps control-->
+                                                                <div class="row mt-3">
+                                                                    <div class="col-md-5">
+                                                                        <a class="btn btn-success w-100" type="button" data-bs-toggle="collapse"
+                                                                            data-bs-target="#collapseThree"><i class="fa-solid fa-arrow-left"></i> Previous</a>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                    </div>
+                                                                    <div class="col-md-5">
+                                                                        <button class="btn btn-success w-100 border-0" style="background:#76568C;" type="submit">Submit <i class="fa-solid fa-arrow-up"></i></button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div><!--End of steps 4-->
 
                                                 </form>
                                             </div>
@@ -806,9 +866,8 @@
                         <div class="col-md-4">
                             <div class="card border-0 shadow" style="width: 18rem; margin-top:50%;">
                                 <div class="card-body">
-                                    <h5 class="card-title">What is Culineira</h5>
+                                    <h5 class="card-title">What is Musica</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
                         </div>
@@ -818,10 +877,10 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <i class="fa-solid fa-book fa-2x"></i>
+                                                <i class="fa-solid fa-radio fa-2x"></i>
                                             </div>
                                             <div class="col-md-10">
-                                                <h5 class="card-title">Recipes</h5>
+                                                <h5 class="card-title">Radio</h5>
                                             </div>
                                         </div>
                                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
@@ -831,10 +890,10 @@
                                     <div class="card-body">
                                     <div class="row">
                                             <div class="col-md-2">
-                                                <i class="fa-solid fa-kitchen-set fa-2x"></i>
+                                                <i class="fa-solid fa-compact-disc fa-2x"></i>
                                             </div>
                                             <div class="col-md-10">
-                                                <h5 class="card-title">My Kitchen</h5>
+                                                <h5 class="card-title">Albums</h5>
                                             </div>
                                         </div>
                                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
@@ -844,10 +903,10 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <i class="fa-solid fa-people-group fa-2x"></i>
+                                                <i class="fa-solid fa-podcast fa-2x"></i>
                                             </div>
                                             <div class="col-md-10">
-                                                <h5 class="card-title mx-1">Community</h5>
+                                                <h5 class="card-title mx-1">Podcast</h5>
                                             </div>
                                         </div>
                                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
@@ -857,10 +916,10 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <i class="fa-solid fa-link fa-2x"></i>
+                                                <i class="fa-solid fa-music fa-2x"></i>
                                             </div>
                                             <div class="col-md-10">
-                                                <h5 class="card-title mx-1">Dependencies</h5>
+                                                <h5 class="card-title mx-1">Music</h5>
                                             </div>
                                         </div>
                                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
@@ -870,18 +929,18 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <i class="fa-solid fa-person-chalkboard fa-2x"></i>
+                                                <i class="fa-solid fa-microphone-lines fa-2x"></i>
                                             </div>
                                             <div class="col-md-10">
-                                                <h5 class="card-title mx-1">Classroom</h5>
+                                                <h5 class="card-title mx-1">Creation</h5>
                                             </div>
                                         </div>
                                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
                                     </div>
                                 </div>
-                                <div class="card border-0 shadow mt-3 mx-2" style="width:220px; background:#EB7336;">
+                                <div class="card border-0 shadow mt-3 mx-2" style="width:220px; background:#009791;">
                                     <div class="card-body">
-                                        <form action="/login/postFeedback" method="POST">
+                                        <form action="" method="POST">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-2">
@@ -909,13 +968,13 @@
                 <div class="cta_content">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="{{asset('assets/Culineira_Mascot.png')}}" alt='logo'
+                            <img src="{{asset('assets/Musica_Ads.png')}}" alt='logo'
                                 style='width:100%;'>
                         </div>
                         <div class="col-md-8">
-                            <h3>Have any great recipe?<br><a style="font-size:14px;"> But you dont know where to share it?</a></h3>
+                            <h3>Want to share your music?<br><a style="font-size:14px;"> But you dont know where to share it?</a></h3>
                             <p>Curabitur libero eros, efficitur sit amet sodales tincidunt, aliquet et leo sed ut nibh feugiat, auctor enim quis.</p>
-                            <a href="#" class="btn btn-success">Join Us</a>
+                            <a href="#" class="btn btn-info">Join Us</a>
                         </div>
                     </div>
                 </div>
@@ -982,7 +1041,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center text-dark">Copyright &copy; 2020 All rights reserved.</p>
+                <p class="text-center text-dark">Copyright &copy; 2022 All rights reserved.</p>
             </div>
         </footer>
 
@@ -1058,21 +1117,6 @@
             }
             }, 1000);
 
-             //Sidebar setting.
-        (function($) {
-        "use strict";
-        var fullHeight = function() {
-            $('.js-fullheight').css('height', $(window).height());
-            $(window).resize(function(){
-                $('.js-fullheight').css('height', $(window).height());
-            });
-        };
-        fullHeight();
-        $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-        });
-        })(jQuery);
-
             //Search input.
             function autocomplete(inp, arr) {
                 var currentFocus;
@@ -1144,6 +1188,28 @@
             autocomplete(document.getElementById("searchInput"), country);
         </script>
 
+        <script>
+            $(document).ready(function () {
+                //Add preferred genre.
+                i = 1; j = 1;
+                $("#add_music_genre").on('click', function () {
+                    if(i <= 3){
+                        var msc = $("#music_genre").val();
+                        $('#data_music_genre').append(
+                            '<div class="card border-0 rounded m-1 p-1" style="background: rgba(118, 86, 140, 0.2); width:30%;"><input name="music_genre[]" class="form-control" hidden value="'+ msc +'">'+ msc +'</div>');
+                        i++;
+                    }
+                })
+                $("#add_podcast_genre").on('click', function () {
+                    if(j <= 3){
+                        var pdc = $("#podcast_genre").val();
+                        $('#data_podcast_genre').append(
+                            '<div class="card border-0 rounded m-1 p-1" style="background: rgba(118, 86, 140, 0.2); width:30%;"><input name="podcast_genre[]" class="form-control" hidden value="'+ pdc +'">'+ pdc +'</div>');
+                        j++;
+                    }
+                });
+            });
+        </script>
 	</body>
 </html>
 
