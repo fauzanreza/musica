@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MusicController;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +18,6 @@ use App\Http\Controllers\MusicController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [MusicController::class, 'index']);
+Route::get('/', [LandingController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
 
