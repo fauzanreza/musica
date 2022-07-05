@@ -43,6 +43,9 @@
                 --background6: #3A3B3C;
                 --background7: #f4fa52;
             }
+            .text-title {
+                color: var(--text) ;
+            }
             .steps {
                 display: flex;
                 justify-content: space-between;
@@ -601,16 +604,10 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="nav navbar-nav ml-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">Discover</a>
+                                        <a class="nav-link" href="" role="button">Music</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="" role="button">Radio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">Album</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="" role="button">Podcast</a>
@@ -734,7 +731,7 @@
                                                                 <label class="form-label">Preview</label>
                                                                 <div class="row">
                                                                     <div class="col-md-7">
-                                                                        <img id="frame" src="http://127.0.0.1:8000/assets/NoImage.png" class="img-fluid" style="width:200px; border-radius:100%; background:white;"/>
+                                                                        <img id="frame" src="http://127.0.0.1:8000/assets/image/icon/noimage.png" class="img-fluid" style="width:200px; border-radius:100%; background:white;"/>
                                                                     </div>
                                                                     <div class="col-md-5">
                                                                         <a onclick="clearImageCreateAcc()" class="btn btn-danger mt-3 w-100"><i class="fa-solid fa-trash"></i> Reset</a>
@@ -861,7 +858,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div class='container-fluid bg-transparent py-4' style="padding:15%;">
+                    <h2 class="text-dark text-center mt-5">OUR FEATURES</h2></header>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card border-0 shadow" style="width: 18rem; margin-top:50%;">
@@ -959,6 +958,122 @@
                         </div>
                     </div>
                 </div>
+
+                <section>
+                    <div class="container" style="margin-top:12%;">
+                        <h2 class="text-dark text-center mt-5">FREQUENTLY ASKED QUESTIONS</h2></header>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div id="accordionFAQ">
+                                    <div class="card bg-transparent border-0">
+                                        <div class="card-header" id="headingOne" style='border:none;'>
+                                            <a data-bs-toggle="collapse" href="#collapseA1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <h6 class="text-title"><i class="fa-solid fa-angle-down float-right"></i> Why use Musica?</h6>
+                                            </a>
+                                        </div>
+                                        <div id="collapseA1" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                                            <div class="card-body text-title">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-transparent border-0">
+                                        <div class="card-header" id="headingTwo" style='border:none;'>
+                                            <a data-bs-toggle="collapse" href="#collapseA2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <h6 class="text-title"><i class="fa-solid fa-angle-down float-right"></i> Are Musica ensure security of user data?</h6>
+                                            </a>
+                                        </div>
+                                        <div id="collapseA2" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                                            <div class="card-body text-title">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-transparent border-0">
+                                        <div class="card-header" id="headingThree" style='border:none;'>
+                                            <a data-bs-toggle="collapse" href="#collapseA3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <h6 class="text-title"><i class="fa-solid fa-angle-down float-right"></i> Are all of music, podcast, etc in Musica legal?</h6>
+                                            </a>
+                                        </div>
+                                        <div id="collapseA3" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                                            <div class="card-body text-title">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div id="accordion2">
+                                    <div class="card bg-transparent border-0">
+                                        <div class="card-header" id="headingOne" style='border:none;'>
+                                            <a data-bs-toggle="collapse" href="#collapseB1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <h6 class="text-title"><i class="fa-solid fa-angle-down float-right"></i> The difference between Musica and others similiar Apps?</h6>
+                                            </a>
+                                        </div>
+                                        <div id="collapseB1" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion2">
+                                            <div class="card-body text-title">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-transparent border-0">
+                                        <div class="card-header" id="headingTwo" style='border:none;'>
+                                            <a data-bs-toggle="collapse" href="#collapseB2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <h6 class="text-title"><i class="fa-solid fa-angle-down float-right"></i> Can Musica be used for free?</h6>
+                                            </a>
+                                        </div>
+                                        <div id="collapseB2" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion2">
+                                            <div class="card-body text-title">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-transparent border-0">
+                                        <div class="card-header" id="headingThree" style='border:none;'>
+                                            <a data-bs-toggle="collapse" href="#collapseB3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <h6 class="text-title"><i class="fa-solid fa-angle-down float-right"></i> When we use Musica?</h6>
+                                            </a>
+                                        </div>
+                                        <div id="collapseB3" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordion2">
+                                            <div class="card-body text-title">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="container" style="margin-top:12%;">
+                        <h2 class="text-dark text-center mt-5">THEIR EXPERIENCE</h2></header>
+                        <div class="row">
+                            <div class="card border-0 bg-transparent m-5 p-3 w-25">
+                                <img class="rounded-circle img-fluid rounded shadow w-75 mx-auto d-block" src="{{asset('assets/image/users/User.jpg')}}" alt='user.jpg'>
+                                <h4 class="text-center fw-bold">@flazefy</h4>
+                                <a class="text-center">"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid"</a>
+                                <a class="text-center fst-italic fw-bold mt-2">joined since Dec 2021</a>
+                            </div>
+                            <div class="card border-0 bg-transparent m-5 p-3 w-25">
+                                <img class="rounded-circle img-fluid rounded shadow w-75 mx-auto d-block" src="{{asset('assets/image/users/User.jpg')}}" alt='user.jpg'>
+                                <h4 class="text-center fw-bold">@richardkyle</h4>
+                                <a class="text-center">"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid"</a>
+                                <a class="text-center fst-italic fw-bold mt-2">joined since Jan 2022</a>
+                            </div>
+                            <div class="card border-0 bg-transparent m-5 p-3 w-25">
+                                <img class="rounded-circle img-fluid rounded shadow w-75 mx-auto d-block" src="{{asset('assets/image/users/User.jpg')}}" alt='user.jpg'>
+                                <h4 class="text-center fw-bold">@teresevy</h4>
+                                <a class="text-center">"Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid"</a>
+                                <a class="text-center fst-italic fw-bold mt-2">joined since Apr 2022</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
 
@@ -1056,7 +1171,7 @@
             }
             function clearImageCreateAcc() {
                 document.getElementById('formFileCreateAcc').value = null;
-                frame.src = "http://127.0.0.1:8000/assets/NoImage.png";
+                frame.src = "http://127.0.0.1:8000/assets/image/icon/noimage.png";
             }
 
             //Stepper Create Recipe
