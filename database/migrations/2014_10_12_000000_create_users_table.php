@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password', 20);
             $table->string('country', 50);
             $table->longtext('description');
+            $table->string('imageurl', 100);
             $table->timestamps();
         });
     }

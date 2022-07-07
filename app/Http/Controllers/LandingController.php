@@ -46,11 +46,42 @@ class LandingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function signup(Request $request)
     {
-        //
-    }
+        //input user data
+        $check = DB::table('users')
+            ->select()
+            ->where('username', $request-> username)
+            ->get();
+        if(count($check) == 0){
+            //validate image
+        $this->validate($request, [
+            'user_image'     => 'required|image|mimes:jpeg,png,jpg|max:5000',
+        ]);
 
+        //upload image
+        $image = $request->file('user_image');
+        $image->storeAs('public', $image->hashName());
+
+            user::create([
+                'username' => $request-> username,
+                'email' => $request-> email,
+                'password' => $request-> password,
+                'country' => $request-> country,
+                'description' => $request-> description,
+                'imageurl' => $image->hashName(),
+                'created_at' => date("Y-m-d h:m:i"),
+                'updated_at' => date("Y-m-d h:m:i"),
+            ]);
+
+
+            $request->session()->put('usernameKey', $request-> username);
+            $request->session()->put('passwordKey', $request-> password);
+            return redirect()->route('home');
+        } else {
+            return redirect()->route('/')->with('failed_message', 'Username already been taken');
+        }
+    }
     /**
      * Display the specified resource.
      *

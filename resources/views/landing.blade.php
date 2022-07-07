@@ -689,7 +689,7 @@
                                                         <div class="step-title">Validation</div>
                                                     </div>
                                                 </div>
-                                                <form action="/create" method="POST" autocomplete="off" enctype="multipart/form-data">
+                                                <form action="/signup" method="POST" autocomplete="off" enctype="multipart/form-data" nonvalidate>
                                                 @csrf
                                                     <div class="card border-0 bg-transparent">
                                                         <div id="headingOne"></div>
@@ -697,14 +697,14 @@
                                                             data-bs-parent="#accordionExample">
                                                             <div class="card-body">
                                                                 <a class="text-dark">Username</a>
-                                                                <input class="form-control" type="text" name="username" required></input>
+                                                                <input class="form-control" type="text" name="username" ></input>
                                                                 <a class="text-dark">Email</a>
-                                                                <input class="form-control" type="email" name="email" placeholder="example@gmail.com" required></input>
+                                                                <input class="form-control" type="email" name="email" placeholder="example@gmail.com" ></input>
                                                                 <a class="text-dark">Password</a>
-                                                                <input class="form-control" type="password" name="password" required></input>
+                                                                <input class="form-control" type="password" name="password" ></input>
                                                                 <a class="text-dark">Country</a>
                                                                 <div class="autocomplete w-100">
-                                                                    <input class="form-control" type="text" id="searchInput" name="country" required></input>
+                                                                    <input class="form-control" type="text" id="searchInput" name="country" ></input>
                                                                 </div>
                                                                 <a class="text-dark">Description</a>
                                                                 <textarea class="form-control" rows="3" aria-label="With textarea" name="description" placeholder="tell others about yourselft..."></textarea>
@@ -727,7 +727,7 @@
                                                             data-bs-parent="#accordionExample">
                                                             <div class="card-body">
                                                                 <a class="text-dark">Image</a>
-                                                                <input class="form-control" type="file" id="formFileCreateAcc" onchange="previewCreateAcc()" name="user_image" accept="image/png, image/jpg, image/jpeg" required>
+                                                                <input class="form-control" type="file" id="formFileCreateAcc" onchange="previewCreateAcc()" name="user_image" accept="image/png, image/jpg, image/jpeg"    >
                                                                 <label class="form-label">Preview</label>
                                                                 <div class="row">
                                                                     <div class="col-md-7">
