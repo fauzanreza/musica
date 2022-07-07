@@ -21,4 +21,5 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [LandingController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/login', [LandingController::class, 'login']);
+Route::post('/signup', [LandingController::class, 'signup']);
 
