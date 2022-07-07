@@ -1159,6 +1159,23 @@
                 <p class="text-center text-dark">Copyright &copy; 2022 All rights reserved.</p>
             </div>
         </footer>
+         <!--Modal validation-->
+         @if(Session::has('failed_message'))
+            <div class="modal fade" id="error_login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="{{asset('assets/image/icon/Failed.png')}}" alt='failed.png' style='width:30%;'><br>
+                        <h7 class="m-2">{{ Session::get('failed_message') }}</h7>
+                    </div>
+                </div>
+            </div>
+            </div>
+        @endif
 
         <!--Others CDN.-->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -1323,6 +1340,11 @@
                         j++;
                     }
                 });
+            });
+              //Modal setting.
+              $(window).on('load', function() {
+                $('#error_login').modal('show');
+                // $('#recipe_toast').toast('show');
             });
         </script>
 	</body>
