@@ -43,6 +43,16 @@
                 --background6: #3A3B3C;
                 --background7: #f4fa52;
             }
+            #itemBox{
+                background:var(--background2);
+            }
+            .text-primary{
+                color: var(--text) !important;
+                font-weight:bold;
+            }
+            a.text-dark{
+                font-weight:bold;
+            }
             .steps {
                 display: flex;
                 justify-content: space-between;
@@ -589,6 +599,13 @@
             ::-webkit-scrollbar-thumb:hover {
                 background: #f5c61d;
             }
+            #topMusic{
+                background-position: center;
+                background-repeat:no-repeat;
+                position: relative;
+                background-size: cover;
+                color:white;
+            }
 		</style>
 
     </head>
@@ -648,40 +665,119 @@
             </nav>
 
             <!-- Page Content  -->
-            <div id="content" class="pb-2" style='width:100%;'>
-                <div class="container-fluid" style="background:linear-gradient(to bottom right, #f5e61d, #FBF305);">
-                    <div class="accordion py-4" id="accordionRecipe" style="padding:15%;">
-                        <!--Secondary Navbar.-->
+            <div id="content" class="p-4" style='width:100%; max-height: calc(90vh - 140px); overflow-x: auto;'>
+                <div class="accordion" id="accordionRecipe">
+                    <!--Secondary Navbar.-->
+                    <nav class="navbar navbar-expand-lg navbar-light bg-dark rounded" style='position:sticky; top: 0; z-index:100;'>
 
-                        <nav class="navbar navbar-expand-lg navbar-light bg-dark rounded">
-
-                        <button type="button" id="sidebarCollapse" data-bs-toggle="collapse" data-bs-target="#collapseExample" class="btn btn-primary">
-                            <i class="fa-solid fa-bars"></i>
-                        <span class="sr-only">Toggle Menu</span>
-                        </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <!--Collapse menu button.-->
-                                <ul class="nav navbar-nav ml-auto">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">Discover</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">Favorite</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="" role="button">History</a>
-                                    </li>
-                                </ul>
-                                <!--Account button-->
-                                <a style='margin-left:65%;' type="button">
-                                    <img class="rounded-circle img-fluid" src="{{asset('assets/image/users/User.jpg')}}" alt='logo'
+                    <button type="button" id="sidebarCollapse" data-bs-toggle="collapse" data-bs-target="#collapseExample" class="btn btn-primary">
+                        <i class="fa-solid fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                    </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!--Collapse menu button.-->
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="" role="button">Discover</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="" role="button">Favorite</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="" role="button">History</a>
+                                </li>
+                            </ul>
+                            <!--Account button-->
+                            <a style='margin-left:75%;' type="button" title="Account">
+                                @foreach($user as $u)
+                                    <img class="rounded-circle img-fluid" src="http://127.0.0.1:8000/storage/{{ $u->imageurl }}?>" alt='{{$u->imageurl}}'
                                         style='width:40px;'>
-                                    <span class="collapse" id="collapseExample" style="position:absolute; white-space: nowrap; color:whitesmoke; margin-top:10px; margin-left:5px;">Flazefy</span>
-                                </a>
+                                    <span class="collapse" id="collapseExample" style="position:absolute; white-space: nowrap; color:whitesmoke; margin-top:10px; margin-left:5px;">{{$u->username}}</span>
+                                @endforeach
+                            </a>
+                        </div>
+                    </nav>
+
+                <div class="row w-90 m-1">
+                    <!--Top artist this week-->
+                    <div class="card w-50 h-25 p-4 m-2 rounded shadow" style="background:#FBF305;">
+                        <a class="text-dark"><i class="fa-solid fa-circle-check" style="color:#42ba96;"></i> Verified Artist</a><br>
+                        <div class="row">
+                            <div class="col-md">
+                                <h7 class="text-dark fs-2 fw-bold">Martin Garrix</h7><br>
+                                <a class="text-dark"><span class="fw-bold"><i class="fa-solid fa-headphones-simple"></i> +12 Million</span> weekly listeners</a>
+                                <button class="btn btn-dark rounded-pill mt-4" title="browse"><i class="fa-solid fa-arrow-right"></i> Browse</button>
+                                <button class="btn btn-transparent rounded-pill border-2 border-dark mt-4" title="Unfollow"><i class="fa-solid fa-check"></i> Following</button>
                             </div>
-                        </nav>
+                            <div class="col-md">
+                                <img class="rounded-circle img-fluid d-block mx-auto mb-3" src="http://127.0.0.1:8000/storage/xgh4piqDcXR4MvQBcjKk56JpimLfhSaRSMHovCKk.jpg?>" alt='{{$u->imageurl}}'
+                                    style='width:150px;'>
+                            </div>
+                        </div>
                     </div>
+                    <!--Top Songs this week-->
+                    <div class="card w-25 h-25 m-2 bg-transparent rounded shadow" id="topMusic" style="background-image: url('http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg');" title="Click to Play">
+                        <button class="btn btn-transparent py-5" style="background-color: rgba(0, 0, 0, 0.41); backdrop-filter: blur(0.5px);">
+                            <br><a class="text-white fs-5 fw-bold">Hardwell feat. Harrison - Earthquake</a><br>
+                            <a class="text-white"><span class="fw-bold"><i class="fa-solid fa-circle-play"></i> 200 K</span> times played </a>
+                            <a class="btn btn-primary rounded-pill mt-4" title="Add"><i class="fa-solid fa-plus"></i> Add to Playlist</a>
+                        </button>
+                    </div>
+                </div><!--End of row-->
+
+                <div class="card w-75 p-4 m-3 rounded shadow" id="itemBox">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <a class="text-primary"><i class="fa-solid fa-ranking-star" style="color:#42ba96;"></i> Top Trending</a>
+                        </div>
+                        <div class="col-md-2">
+                            <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
+                        </div>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <!--Songs List-->
+                            <tr class='clickable-row'>
+                                <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
+                                <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                <td>
+                                    <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
+                                    <a class="text-secondary">EDM</a>
+                                </td>
+                                <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
+                                <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
+                                <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
+                                <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
+                            </tr>
+                            <tr class='clickable-row'>
+                                <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
+                                <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                <td>
+                                    <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
+                                    <a class="text-secondary">EDM</a>
+                                </td>
+                                <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
+                                <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
+                                <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
+                                <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
+                            </tr>
+                            <tr class='clickable-row'>
+                                <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
+                                <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                <td>
+                                    <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
+                                    <a class="text-secondary">EDM</a>
+                                </td>
+                                <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
+                                <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
+                                <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
+                                <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                </div><!--End of accordion-->
+
             </div>
         </div>
 
