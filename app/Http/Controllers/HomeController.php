@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\user;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view("home");
+        $userAll = user::all();
+        $user = DB::table('users')->where('username', session()->get('usernameKey'))->get();
+        return view("home")
+            ->with('user', $user) //Get user data by login username.
+            ->with('all_user', $userAll); //Get all user.
     }
 
     /**
