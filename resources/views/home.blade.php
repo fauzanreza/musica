@@ -584,6 +584,12 @@
                 height: 210px;
                 overflow-y: scroll;
             }
+            #recently-holder{
+                display: flex;
+                flex-direction: column;
+                height: 500px;
+                overflow-y: scroll;
+            }
             /*Custom scrollbar*/
             ::-webkit-scrollbar {
                 width: 10px;
@@ -605,6 +611,16 @@
                 position: relative;
                 background-size: cover;
                 color:white;
+            }
+            a.text-primary.fw-normal{
+                font-size:12px;
+                width:110px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
 		</style>
 
@@ -635,7 +651,7 @@
                             <a href="#"><i class="fa-solid fa-podcast"></i> Podcast</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa-solid fa-solid fa-microphone-lines"></i> Creation</a>
+                            <a href="#"><i class="fa-solid fa-microphone-lines"></i> Creation</a>
                         </li>
                         <a>Playlist</a>
                         <!--Create Playlist.-->
@@ -669,11 +685,10 @@
                 <div class="accordion" id="accordionRecipe">
                     <!--Secondary Navbar.-->
                     <nav class="navbar navbar-expand-lg navbar-light bg-dark rounded" style='position:sticky; top: 0; z-index:100;'>
-
-                    <button type="button" id="sidebarCollapse" data-bs-toggle="collapse" data-bs-target="#collapseExample" class="btn btn-primary">
-                        <i class="fa-solid fa-bars"></i>
-                    <span class="sr-only">Toggle Menu</span>
-                    </button>
+                        <button type="button" id="sidebarCollapse" data-bs-toggle="collapse" data-bs-target="#collapseExample" class="btn btn-primary">
+                            <i class="fa-solid fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                        </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!--Collapse menu button.-->
                             <ul class="nav navbar-nav ml-auto">
@@ -698,86 +713,241 @@
                         </div>
                     </nav>
 
-                <div class="row w-90 m-1">
-                    <!--Top artist this week-->
-                    <div class="card w-50 h-25 p-4 m-2 rounded shadow" style="background:#FBF305;">
-                        <a class="text-dark"><i class="fa-solid fa-circle-check" style="color:#42ba96;"></i> Verified Artist</a><br>
-                        <div class="row">
-                            <div class="col-md">
-                                <h7 class="text-dark fs-2 fw-bold">Martin Garrix</h7><br>
-                                <a class="text-dark"><span class="fw-bold"><i class="fa-solid fa-headphones-simple"></i> +12 Million</span> weekly listeners</a>
-                                <button class="btn btn-dark rounded-pill mt-4" title="browse"><i class="fa-solid fa-arrow-right"></i> Browse</button>
-                                <button class="btn btn-transparent rounded-pill border-2 border-dark mt-4" title="Unfollow"><i class="fa-solid fa-check"></i> Following</button>
-                            </div>
-                            <div class="col-md">
-                                <img class="rounded-circle img-fluid d-block mx-auto mb-3" src="http://127.0.0.1:8000/storage/xgh4piqDcXR4MvQBcjKk56JpimLfhSaRSMHovCKk.jpg?>" alt='{{$u->imageurl}}'
-                                    style='width:150px;'>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Top Songs this week-->
-                    <div class="card w-25 h-25 m-2 bg-transparent rounded shadow" id="topMusic" style="background-image: url('http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg');" title="Click to Play">
-                        <button class="btn btn-transparent py-5" style="background-color: rgba(0, 0, 0, 0.41); backdrop-filter: blur(0.5px);">
-                            <br><a class="text-white fs-5 fw-bold">Hardwell feat. Harrison - Earthquake</a><br>
-                            <a class="text-white"><span class="fw-bold"><i class="fa-solid fa-circle-play"></i> 200 K</span> times played </a>
-                            <a class="btn btn-primary rounded-pill mt-4" title="Add"><i class="fa-solid fa-plus"></i> Add to Playlist</a>
-                        </button>
-                    </div>
-                </div><!--End of row-->
-
-                <div class="card w-75 p-4 m-3 rounded shadow" id="itemBox">
                     <div class="row">
-                        <div class="col-md-10">
-                            <a class="text-primary"><i class="fa-solid fa-ranking-star" style="color:#42ba96;"></i> Top Trending</a>
+                        <div class="col-md-9">
+                            <div class="row m-2">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <!--Top artist this week-->
+                                        <div class="card w-100 p-4 rounded shadow" style="background:#FBF305;">
+                                            <a class="text-dark"><i class="fa-solid fa-circle-check" style="color:#42ba96;"></i> Verified Artist</a><br>
+                                            <div class="row">
+                                                <div class="col-md">
+                                                    <h7 class="text-dark fs-2 fw-bold">Martin Garrix</h7><br>
+                                                    <a class="text-dark"><span class="fw-bold"><i class="fa-solid fa-headphones-simple"></i> +12 Million</span> weekly listeners</a>
+                                                    <button class="btn btn-dark rounded-pill mt-4" title="browse"><i class="fa-solid fa-arrow-right"></i> Browse</button>
+                                                    <button class="btn btn-transparent rounded-pill border-2 border-dark mt-4" title="Unfollow"><i class="fa-solid fa-check"></i> Following</button>
+                                                </div>
+                                                <div class="col-md">
+                                                    <img class="rounded-circle img-fluid d-block mx-auto mb-3" src="http://127.0.0.1:8000/storage/xgh4piqDcXR4MvQBcjKk56JpimLfhSaRSMHovCKk.jpg?>" alt='{{$u->imageurl}}'
+                                                        style='width:150px;'>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <!--Top Songs this week-->
+                                        <div class="card w-100 bg-transparent rounded shadow my-1" id="topMusic" style="background-image: url('http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg');" title="Click to Play">
+                                            <button class="btn btn-transparent py-4 m-1" style="background-color: rgba(0, 0, 0, 0.41); backdrop-filter: blur(0.5px);">
+                                                <br><a class="text-white fs-5 fw-bold">Hardwell feat. Harrison - Earthquake</a><br>
+                                                <a class="text-white"><span class="fw-bold"><i class="fa-solid fa-circle-play"></i> 200 K</span> times played </a>
+                                                <a class="btn btn-primary rounded-pill mt-4" title="Add"><i class="fa-solid fa-plus"></i> Add to Playlist</a>
+                                            </button>
+                                            <div id="top_extend" class="position-absolute" style="left:105%;">
+                                                <button class="btn btn-primary rounded-circle shadow d-block mb-2" data-bs-toggle="collapse" href="#collapseTopSong" style="border:2.5px solid #212121; width:40px !important;"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                                <div class="collapse" id="collapseTopSong">
+                                                    <button class="btn btn-primary rounded-circle shadow d-block mb-2 w-100" title="Play"><i class="fa-solid fa-circle-play"></i></button>
+                                                    <button class="btn btn-primary rounded-circle shadow d-block mb-2 w-100" title="Share"><i class="fa-solid fa-share"></i></button>
+                                                    <button class="btn btn-primary rounded-circle shadow d-block mb-2 w-100" title="Like"><i class="fa-solid fa-thumbs-up"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--End of row-->
+
+                            <div class="card p-4 m-3 rounded shadow" id="itemBox">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <a class="text-primary"><i class="fa-solid fa-ranking-star" style="color:#42ba96;"></i> Top Trending</a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
+                                    </div>
+                                </div>
+                                <table class="table">
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td>
+                                                <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
+                                                <a class="text-secondary">EDM</a>
+                                            </td>
+                                            <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
+                                            <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
+                                            <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
+                                            <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
+                                        </tr>
+                                        <tr class='clickable-row'>
+                                            <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td>
+                                                <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
+                                                <a class="text-secondary">EDM</a>
+                                            </td>
+                                            <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
+                                            <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
+                                            <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
+                                            <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
+                                        </tr>
+                                        <tr class='clickable-row'>
+                                            <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td>
+                                                <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
+                                                <a class="text-secondary">EDM</a>
+                                            </td>
+                                            <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
+                                            <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
+                                            <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
+                                            <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><!--End of card.-->
+
+                            <div class="card p-4 m-3 rounded shadow" id="itemBox">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <a class="text-primary"><i class="fa-solid fa-splotch" style="color:#42ba96;"></i> New Release</a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
+                                    </div>
+                                </div>
+
+                            </div><!--End of card.-->
+
+                            <div class="card p-4 m-3 rounded shadow" id="itemBox">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <a class="text-primary"><i class="fa-solid fa-heart" style="color:#42ba96;"></i> You May Like It</a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
+                                    </div>
+                                </div>
+
+                            </div><!--End of card.-->
+
+                            <div class="card p-4 m-3 rounded shadow" id="itemBox">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <a class="text-primary"><i class="fa-solid fa-microphone-lines" style="color:#42ba96;"></i> Other Creation</a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
+                                    </div>
+                                </div>
+
+                            </div><!--End of card.-->
                         </div>
-                        <div class="col-md-2">
-                            <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
+
+                        <div class="col-md-3">
+                            <div class="card w-100 p-3 border-0 rounded shadow" id="topMusic" style="background-image: url('http://127.0.0.1:8000/storage/laXWp8VW08fsx3yAx6PnHWN0xxJ9lZ2Pstfhu0qu.jpg');">
+                                <a class="text-white"><i class="fa-solid fa-compact-disc" style="color:#42ba96;"></i> Top Album</a><br>
+                                <h7 class="text-white fs-4 fw-bold">Memories Do Not Open</h7><br>
+                                <a class="text-white fw-normal"><span class="fw-bold"><i class="fa-solid fa-music"></i> 12</span> Songs in <span class="fw-bold">43</span> min</a>
+                                <button class="btn btn-primary rounded-pill mt-4" title="browse"><i class="fa-solid fa-arrow-right"></i> Start Listening</button>
+                            </div>
+
+                            <div class="card p-2 my-3 rounded shadow" id="itemBox">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <a class="text-primary">Recently Played</a>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
+                                    </div>
+                                </div>
+                                <table class="table" id="recently-holder">
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <!--Songs List-->
+                                        <tr class='clickable-row'>
+                                            <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
+                                            <td><a class="text-primary fw-normal">Manse feat. Alice Berg - Freeze Time</a></td>
+                                            <td class="text-primary fw-normal" style="font-size:12px;">2 hr ago</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div><!--End of card.-->
                         </div>
                     </div>
-                    <table class="table">
-                        <tbody>
-                            <!--Songs List-->
-                            <tr class='clickable-row'>
-                                <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
-                                <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
-                                <td>
-                                    <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
-                                    <a class="text-secondary">EDM</a>
-                                </td>
-                                <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
-                                <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
-                                <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
-                                <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
-                            </tr>
-                            <tr class='clickable-row'>
-                                <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
-                                <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
-                                <td>
-                                    <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
-                                    <a class="text-secondary">EDM</a>
-                                </td>
-                                <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
-                                <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
-                                <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
-                                <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
-                            </tr>
-                            <tr class='clickable-row'>
-                                <th scope="row"><a class="text-primary d-block mt-2">#2</a></th>
-                                <td style='width:60px;'> <img class="rounded img-fluid d-block mx-auto" src="http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg?>" alt='{{$u->imageurl}}'></td>
-                                <td>
-                                    <a class="text-primary">Manse feat. Alice Berg - Freeze Time</a><br>
-                                    <a class="text-secondary">EDM</a>
-                                </td>
-                                <td class="text-primary"><i class="fa-solid fa-circle-play"></i> 204,020</td>
-                                <td class="text-primary"><i class="fa-solid fa-clock"></i> 3:15</td>
-                                <td class="text-primary"><a type="button"><i class="fa-solid fa-heart"></i></a></td>
-                                <td class="text-primary"><a type="button"><i class="fa-solid fa-plus"></i></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
                 </div><!--End of accordion-->
-
             </div>
         </div>
 
