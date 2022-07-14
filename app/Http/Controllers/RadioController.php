@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\user;
 
-class PodcastController extends Controller
+class RadioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class PodcastController extends Controller
     {
         $userAll = user::all();
         $user = DB::table('users')->where('username', session()->get('usernameKey'))->get();
-        return view("podcast")
+        return view("radio")
             ->with('user', $user) //Get user data by login username.
             ->with('all_user', $userAll); //Get all user.
     }

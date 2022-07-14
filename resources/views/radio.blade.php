@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Musica</title>
+    <title>Musica Radio</title>
     <!--Meta tags-->
     <meta charset="utf-8" name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -650,10 +650,10 @@
                     <!--Main Navbar.-->
                     <ul class="list-unstyled components mb-3">
                         <a>Menu</a>
-                        <li class="active">
-                            <a href="#"><i class="fa-solid fa-music"></i> Music</a>
-                        </li>
                         <li>
+                            <a href="home"><i class="fa-solid fa-music"></i> Music</a>
+                        </li>
+                        <li class="active">
                             <a href="radio"><i class="fa-solid fa-radio"></i> Radio</a>
                         </li>
                         <li>
@@ -725,8 +725,7 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="row m-2">
-                                <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col">
                                         <!--Top artist this week-->
                                         <div class="card w-100 p-4 rounded shadow" style="background:#FBF305;">
                                             <a class="text-dark"><i class="fa-solid fa-circle-check" style="color:#42ba96;"></i> Verified Artist</a><br>
@@ -744,25 +743,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <!--Top Songs this week-->
-                                        <div class="card w-100 bg-transparent rounded shadow my-1" id="topMusic" style="background-image: url('http://127.0.0.1:8000/storage/ZqvR6eD9yiYhLo7aoMbXv0lMUzXpysUfqItULBqE.jpg');" title="Click to Play">
-                                            <button class="btn btn-transparent py-4 m-1" style="background-color: rgba(0, 0, 0, 0.41); backdrop-filter: blur(0.5px);">
-                                                <br><a class="text-white fs-5 fw-bold">Hardwell feat. Harrison - Earthquake</a><br>
-                                                <a class="text-white"><span class="fw-bold"><i class="fa-solid fa-circle-play"></i> 200 K</span> times played </a>
-                                                <a class="btn btn-primary rounded-pill mt-4" title="Add"><i class="fa-solid fa-plus"></i> Add to Playlist</a>
-                                            </button>
-                                            <div id="top_extend" class="position-absolute" style="left:105%;">
-                                                <button class="btn btn-primary rounded-circle shadow d-block mb-2" data-bs-toggle="collapse" href="#collapseTopSong" style="border:2.5px solid #212121; width:40px !important;"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                                <div class="collapse" id="collapseTopSong">
-                                                    <button class="btn btn-primary rounded-circle shadow d-block mb-2 w-100" title="Play"><i class="fa-solid fa-circle-play"></i></button>
-                                                    <button class="btn btn-primary rounded-circle shadow d-block mb-2 w-100" title="Share"><i class="fa-solid fa-share"></i></button>
-                                                    <button class="btn btn-primary rounded-circle shadow d-block mb-2 w-100" title="Like"><i class="fa-solid fa-thumbs-up"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div><!--End of row-->
 
                             <div class="card p-4 m-3 rounded shadow" id="itemBox">
