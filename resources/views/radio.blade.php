@@ -631,6 +631,10 @@
                 line-clamp: 2;
                 -webkit-box-orient: vertical;
             }
+            .carousel-control-next,
+            .carousel-control-prev /*, .carousel-indicators */ {
+                filter: invert(100%);
+            }
 		</style>
 
     </head>
@@ -727,13 +731,13 @@
                             <div class="row m-2">
                                     <div class="col">
                                         <!--Top artist this week-->
-                                        <div class="card w-100 p-4 rounded shadow" style="background:#FBF305;">
+                                        <!-- <div class="card w-100 p-4 rounded shadow" style="background:#FBF305;">
                                             <a class="text-dark"><i class="fa-solid fa-circle-check" style="color:#42ba96;"></i> Verified Artist</a><br>
                                             <div class="row">
                                                 <div class="col-md">
                                                     <h7 class="text-dark fs-2 fw-bold" id="topTitle">Martin Garrix</h7><br>
                                                     <a class="text-dark"><span class="fw-bold"><i class="fa-solid fa-headphones-simple"></i> +12 Million</span> weekly listeners</a>
-                                                    <button class="btn btn-dark rounded-pill mt-4" title="browse"><i class="fa-solid fa-arrow-right"></i> Browse</button>
+                                                   
                                                     <button class="btn btn-transparent rounded-pill border-2 border-dark mt-4" title="Unfollow"><i class="fa-solid fa-check"></i> Following</button>
                                                 </div>
                                                 <div class="col-md">
@@ -741,6 +745,65 @@
                                                         style='width:150px;'>
                                                 </div>
                                             </div>
+                                        </div> -->
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        </div>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active card w-100 p-4 rounded shadow" style="background:#FBF305;">
+                                                    <a class="text-dark"><i class="fa-solid fa-circle-check" style="color:#42ba96;"></i> Verified Radio</a><br>
+                                                    <div class="row">
+                                                        <div class="col-md">
+                                                            <h7 class="text-dark fs-2 fw-bold" id="topTitle">101 Jak FM</h7><br>
+                                                            <a class="text-dark"><span class="fw-bold"><i class="fa-solid fa-headphones-simple"></i> +1.5 Million</span> weekly listeners</a>
+                                                           
+                                                        </div>
+                                                        <div class="col-md">
+                                                            <img class="rounded-circle img-fluid d-block mx-auto mb-3" src="http://127.0.0.1:8000/storage/VbSzN8hRjLVMaeU26tPBo38NSsacNkQHIiXojejU.jpg?>" alt='{{$u->imageurl}}'
+                                                                style='width:150px;'>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="carousel-item card w-100 p-4 rounded shadow" style="background:#FBF305;">
+                                                    <a class="text-dark"><i class="fa-solid fa-circle-check" style="color:#42ba96;"></i> Verified Radio</a><br>
+                                                    <div class="row">
+                                                        <div class="col-md">
+                                                            <h7 class="text-dark fs-2 fw-bold" id="topTitle">Prambors FM</h7><br>
+                                                            <a class="text-dark"><span class="fw-bold"><i class="fa-solid fa-headphones-simple"></i> +1,8 Million</span> weekly listeners</a>
+                                                           
+                                                            
+                                                        </div>
+                                                        <div class="col-md">
+                                                            <img class="rounded-circle img-fluid d-block mx-auto mb-3" src="http://127.0.0.1:8000/storage/vJjY6vSfQNugkP9hkbwHWZfIoRDizVjjS6UUm5s8.png?>" alt='{{$u->imageurl}}'
+                                                                style='width:150px;'>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-md carousel-item d-flex justify-content-around" style="background:#FBF305;">
+                                                        <img class="rounded-circle" src="http://127.0.0.1:8000/storage/VbSzN8hRjLVMaeU26tPBo38NSsacNkQHIiXojejU.jpg?>" alt='{{$u->imageurl}}'
+                                                            style='width:125px; background:white;'>
+                                                        <img class="rounded-circle" src="http://127.0.0.1:8000/storage/JZRvf8kSxU5Vydls6rGgTeITz7JKQRMxO9qXgc1e.jpg?>" alt='{{$u->imageurl}}'
+                                                            style='width:125px; background:white;'>
+                                                        <img class="rounded-circle" src="http://127.0.0.1:8000/storage/vJjY6vSfQNugkP9hkbwHWZfIoRDizVjjS6UUm5s8.png?>" alt='{{$u->imageurl}}'
+                                                            style='width:125px; background:white;'>
+                                                        <img class="rounded-circle" src="http://127.0.0.1:8000/storage/rKKxp8W1l0xPedgERugTBetfNdldiUSMlCLJVHB8.png?>" alt='{{$u->imageurl}}'
+                                                            style='width:125px; background:white;'>
+                                                        <img class="rounded-circle" src="http://127.0.0.1:8000/storage/lXYt5c0pnGmdBSwWqTXz6sJp0BTJqQj9xX9WYLZL.png?>" alt='{{$u->imageurl}}'
+                                                            style='width:125px; background:white;'>     
+                                                </div> -->
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Previous</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="visually-hidden">Next</span>
+                                            </button>
                                         </div>
                                     </div>
                             </div><!--End of row-->
@@ -748,7 +811,7 @@
                             <div class="card p-4 m-3 rounded shadow" id="itemBox">
                                 <div class="row">
                                     <div class="col-md-10">
-                                        <a class="text-primary"><i class="fa-solid fa-ranking-star" style="color:#42ba96;"></i> Top Trending</a>
+                                        <a class="text-primary"><i class="fa-solid fa-ranking-star" style="color:#42ba96;"></i> Top Radio Channel Most Often Played</a>
                                     </div>
                                     <div class="col-md-2">
                                         <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
@@ -795,18 +858,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div><!--End of card.-->
-
-                            <div class="card p-4 m-3 rounded shadow" id="itemBox">
-                                <div class="row">
-                                    <div class="col-md-10">
-                                        <a class="text-primary"><i class="fa-solid fa-splotch" style="color:#42ba96;"></i> New Release</a>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <a class="text-primary"><i class="fa-solid fa-arrow-right"></i> See All</a>
-                                    </div>
-                                </div>
-
                             </div><!--End of card.-->
 
                             <div class="card p-4 m-3 rounded shadow" id="itemBox">
